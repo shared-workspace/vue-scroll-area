@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import { client } from "node:process";
-
 const { contentLeft, contentTop } = useContentPosition();
 const { contentHeight, contentWidth } = useContentSize();
 const { isHover } = useHover();
 const { scrollDirection } = useScrollDirection();
 const { barSize } = useBarSize();
+const { thumbSize } = useThumbSize();
 </script>
 <template>
   <ul>
@@ -29,6 +28,10 @@ const { barSize } = useBarSize();
       <li>
         <span>Bar size: </span>
         <span>{{ barSize }}</span>
+      </li>
+      <li>
+        <span>Thumb size: </span>
+        <span>{{ thumbSize }}</span>
       </li>
     </client-only>
   </ul>

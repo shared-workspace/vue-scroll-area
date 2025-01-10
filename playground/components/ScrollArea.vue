@@ -8,11 +8,18 @@ const props = defineProps({
   },
   barSize: {
     type: Number || String,
-    default: 16,
+    default: 26,
   },
+  thumbSize: {
+    type: Number,
+    default: 20,
+    min: 0,
+    max: 100,
+  }
 });
 
 const {setScrollDirection} = useScrollDirection();
+
 setScrollDirection(props.direction);
 watchEffect(() => {
   setScrollDirection(props.direction);
@@ -22,6 +29,12 @@ const {setBarSize} = useBarSize();
 setBarSize(props.barSize);
 watchEffect(() => {
   setBarSize(props.barSize);
+});
+
+const {setThumbSize} = useThumbSize();
+setThumbSize(props.thumbSize);
+watchEffect(() => {
+  setThumbSize(props.thumbSize);
 });
 </script>
 <template>

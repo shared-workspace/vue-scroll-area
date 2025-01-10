@@ -13,6 +13,7 @@ const { setHover } = useHover();
     <ScrollContentWrapper>
       <slot></slot>
     </ScrollContentWrapper>
-    <ScrollBar axis="y" />
+    <ScrollBar :isAxisY="true" />
+    <ScrollBar :isAxisX="true" />
   </div>
 </template>
