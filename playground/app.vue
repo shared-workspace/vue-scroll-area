@@ -2,7 +2,11 @@
   <div class="app-container">
     <StatusOverlay />
     <div class="scroll-container">
-      <ScrollArea direction="both">
+      <ScrollArea
+        axis="both"
+        :bar="{ size: 10, transparent: true }"
+        :thumb="{ size: 4, rounded: true, color: 'white' }"
+      >
         <img src="/bg.jpeg" alt="bg" />
       </ScrollArea>
     </div>
@@ -25,4 +29,3 @@
   overflow: hidden;
 }
 </style>
-

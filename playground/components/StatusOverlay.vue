@@ -1,10 +1,20 @@
 <script lang="ts" setup>
-const { contentLeft, contentTop } = useContentPosition();
-const { contentHeight, contentWidth } = useContentSize();
-const { isHover } = useHover();
-const { scrollDirection } = useScrollDirection();
-const { barSize } = useBarSize();
-const { thumbSize } = useThumbSize();
+const {
+  isHover,
+  scrollDirection,
+  barSize,
+  barTransparent,
+  thumbSize,
+  thumbRound,
+  contentClientHeight,
+  contentClientWidth,
+  contentScrollLeft,
+  contentScrollTop,
+  thumbYHeight,
+  thumbYTop,
+  thumbXWidth,
+  thumbXLeft,
+} = useScrollArea();
 </script>
 <template>
   <ul>
@@ -19,19 +29,43 @@ const { thumbSize } = useThumbSize();
       </li>
       <li>
         <span>Content position: </span>
-        <span>{{ contentLeft }} x {{ contentTop }}</span>
+        <span>{{ contentScrollLeft }} x {{ contentScrollTop }}</span>
       </li>
       <li>
         <span>Content size: </span>
-        <span>{{ contentWidth }} x {{ contentHeight }}</span>
+        <span>{{ contentClientWidth }} x {{ contentClientHeight }}</span>
       </li>
       <li>
         <span>Bar size: </span>
         <span>{{ barSize }}</span>
       </li>
       <li>
+        <span>Bar transparent: </span>
+        <span>{{ barTransparent ? "Yes" : "No" }}</span>
+      </li>
+      <li>
         <span>Thumb size: </span>
         <span>{{ thumbSize }}</span>
+      </li>
+      <li>
+        <span>Thumb rounded: </span>
+        <span>{{ thumbRound ? "Yes" : "No" }}</span>
+      </li>
+      <li>
+        <span>thumb Y height: </span>
+        <span>{{ thumbYHeight }}</span>
+      </li>
+      <li>
+        <span>Thumb Y top: </span>
+        <span>{{ thumbYTop }}</span>
+      </li>
+      <li>
+        <span>Thumb X width: </span>
+        <span>{{ thumbXWidth }}</span>
+      </li>
+      <li>
+        <span>Thumb X left: </span>
+        <span>{{ thumbXLeft }}</span>
       </li>
     </client-only>
   </ul>
